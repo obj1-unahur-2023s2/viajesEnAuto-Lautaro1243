@@ -27,6 +27,9 @@ object teresa {
 	var precio = 22
 	
 	method precioKilometro() = precio
+	method precioKilometro(nuevoPrecio){
+		precio = nuevoPrecio
+	}
 }
 
 object melina{

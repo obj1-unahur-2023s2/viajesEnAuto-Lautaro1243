@@ -1,4 +1,5 @@
 import clientes.*
+
 object roxana{
 	
 	method precioViaje(cliente, kms) = cliente.precioKilometro() * kms
@@ -12,12 +13,7 @@ object gabriela{
 object mariela{
 	
 	method precioViaje(cliente, kms){
-		var salida
-		if (cliente.precioKilometro() * kms <= 50){
-			salida = 50
-		}
-		else {salida = cliente.precioKilometro() * kms} 
-		return salida
+		return 50.max(cliente.precioKilometro() * kms)
 	}
 }
 
@@ -34,11 +30,11 @@ object juana{
 }
 
 object lucia{
-	var reemplaza
+	var reemplazaA
 	
-	method reemplazar(remisera){ reemplaza = remisera }
-	method reemplaza() = reemplaza
-	method precioViaje(cliente, kms) = reemplaza.precioViaje(cliente, kms)
+	method reemplazar(remisera){ reemplazaA = remisera }
+	method reemplaza() = reemplazaA
+	method precioViaje(cliente, kms) = reemplazaA.precioViaje(cliente, kms)
 	
 }
 

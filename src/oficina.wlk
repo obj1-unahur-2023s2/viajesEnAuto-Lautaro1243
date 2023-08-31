@@ -20,19 +20,30 @@ object oficina {
 		segundaRemisera = remisera
 	}
 	
-	method intercambiarRemiseras(){
-		var remisera = primeraRemisera
+/* 	method intercambiarRemiseras(){
+		const remisera = primeraRemisera
 		primeraRemisera = segundaRemisera
 		segundaRemisera = remisera
 	}
+*/	
+	
+	method intercambiarRemiseras(){
+		self.asignarRemiseras(segundaRemisera, primeraRemisera)
+	}
+	
 	
 	method remiseraElegidaParaViaje(cliente, kms){
 		
 		if(primeraRemisera.precioViaje(cliente, kms) - segundaRemisera.precioViaje(cliente, kms) > 30){
 			return segundaRemisera
 		}
-		else { return primeraRemisera }
+		else return primeraRemisera 
 	}
+	
+	method primeraRemisera() = primeraRemisera
+	
+	method segundaRemisera() = segundaRemisera
+	
 	
 	
 }
