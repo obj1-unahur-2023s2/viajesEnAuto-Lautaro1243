@@ -1,0 +1,23 @@
+import clientes.*
+
+test "ludmila paga como valor fijo 18 pesos el kilometro" {
+
+	assert.equals(18, ludmila.precioKilometro())
+
+}
+
+test "ana maria paga 30 pesos el kilometro si esta economicamente estable"{
+	assert.equals(30, anaMaria.precioKilometro())
+}
+
+test "ana maria esta inicialmente economicamente estable"{
+	assert.that(anaMaria.economicamenteEstable())
+}
+
+test "ana maria no esta economicamente estable"{
+	assert.notThat(anaMaria.economicamenteEstable())
+}
+
+test "teresa arranca en 22 pesos el kilometro"{
+	assert.equals(22, teresa.precioKilometro())
+}
